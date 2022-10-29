@@ -27,7 +27,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [Page Link](https://xulab5.github.io/order-summary-v1/)
+- Live Site URL: [Page Link](https://xulab5.github.io/fylo-data-storage-component/)
 
 ### Built with
 
