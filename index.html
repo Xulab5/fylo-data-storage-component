@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | Fylo data storage component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    *{
+      margin: 0;
+      padding: 0px;
+    }
+    body{
+      
+      font-family: 'Raleway', sans-serif;
+      font-size: 14px;
+      /* display: grid;
+      place-items: center;
+      height: 100vh; */
+
+     background-image: url(images/bg-mobile.png);
+     background-color: hsl(229, 57%, 11%);
+    }
+    .content{
+      margin: 20px 30px;
+      display: flex;
+      flex-direction: column;
+    }
+    .content__images,.storage{
+      background-color: hsl(228, 56%, 26%);
+      /* background-color: hsl(243, 100%, 93%); */
+      border-top-left-radius:9px;
+      border-bottom-left-radius: 9px;
+      border-bottom-right-radius: 9px;
+    }
+    
+    .content__images{
+      padding: 40px 45px;      
+      border-top-right-radius: 90px;      
+      margin-bottom: 15px;
+    }
+    
+    .image__bottom{
+      display: flex; 
+      margin-top: 30px;     
+    }
+    .image__bottom > span{
+      background-color: hsl(229, 57%, 11%);
+      border-radius: 15px;
+      display: block;
+      padding: 15px;
+      margin-left: 10px;
+      display: grid;
+    place-items: center;
+    }
+    .storage{
+      padding: 40px 45px 60px 45px;
+      text-align: center;
+      border-top-right-radius: 9px;
+      position: relative;
+    }
+    .storage__title{
+      color: hsl(243, 100%, 93%);
+    }
+    .storage__used{
+      font-weight: bold;
+    }
+    .storage input[type="range"]{   
+      -webkit-appearance: none;  
+      appearance: none;
+      width: 100%;        
+      background: transparent;
+      cursor: pointer;
+      overflow: hidden;
+      border: 3px solid hsl(229, 57%, 11%);
+      border-radius: 20px;
+      margin: 15px 0px;
+    }
+    input[type='range']::-webkit-slider-runnable-track {
+      /* -webkit-appearance: none; */
+      background-color: hsl(229, 57%, 11%);
+      padding-block: 2px;
+     
+    }
+    /******** Firefox ********/
+    input[type="range"]::-moz-range-track {
+      background: hsl(229, 57%, 11%);
+      height: 1rem;
+     
+    }
+    /*the circle in the middle*/
+    input[type='range']::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 0.6rem;
+      height: 0.6rem;
+      border-radius: 50%;
+      background-color: white;
+      outline:2px solid rgba(158, 30, 30, 1) ;
+      box-shadow: -300px 0px 0 295px rgba(158, 30, 30, 1);
+    }
+    .storage-bar > div{
+      display: flex;
+      justify-content: space-between;
+      color: hsl(243, 100%, 93%);
+      font-weight: bold;
+    }
+    .storage__balance{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: white;
+      padding: 15px 20px;
+      border-radius: 11px;
+      width: 150px;
+      font-weight: bold;
+      position: absolute;
+      bottom: -33px;
+      margin: 0 auto;
+      left: 0;
+      right: 0;
+    }
+    .storage__balance span:first-child{
+      font-size: 40px;
+    }
+    .storage__balance span:last-child{
+      color: hsl(229, 7%, 55%);
+      padding-left: 10px;
+      text-transform: uppercase;  
+    }
+    @media (min-width:992px) {
+        .content{
+          flex-direction: row;
+          width: 925px;
+        }
+        .content__images{
+          margin-bottom: 0px;
+          flex-grow: 1;
+          padding: 37px 32px;
+        }
+        .image__bottom{
+          margin-top: 20px;
+        }
+        .storage{
+          flex-grow: 2;
+          align-self: end;
+          margin-left: 25px;
+          padding-bottom: 30px;
+        }
+        body{
+          background-image: url("images/bg-desktop.png");
+          background-repeat: no-repeat;
+          background-position: 50% center;
+          /* background-size: 100% 100%; */
+          display: grid;
+          height: 100vh;
+          place-items: center;
+        }
+        .storage__title{
+          text-align: left;
+
+        }
+        .storage__balance{
+          left: unset;
+          bottom: unset;
+          top:-44px;
+          right: 40px;
+          padding-block: 12px;
+        }
+        .storage__balance:before{
+          content: "";
+          width: 0;
+          height: 0;
+          border-top: 31px solid white;
+          border-left: 31px solid transparent;
+          position: absolute;
+          bottom: -21px;
+          right: 0;
+        }
+
+    }
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="content">
+        <div class="content__images images">
+          <div class="image__logo">
+            <img src="images/logo.svg" alt="Flyo">
+          </div>
+          <div class="image__bottom bottom">
+            <span class="bottom__document-icon">
+              <img src="images/icon-document.svg" alt="document icon">
+            </span>
+            <span class="bottom__folder-icon">
+              <img src="images/icon-folder.svg" alt="folder icon">
+            </span>
+            <span class="bottom__upload-icon">
+              <img src="images/icon-upload.svg" alt="Upload icon">
+            </span>
+          </div>
+        </div>
+        <div class="content__storage storage">
+          <div class="storage__title"> 
+            <p>You've used <span class="storage__used">815 GB</span> of your storage
+            </p>
+          </div>
+          <div class="storage-bar">
+              <input type="range" value="70">
+              <div>
+                <span>0 GB</span><span>1000 GB</span>
+              </div>
+          </div>
+          <div class="storage__balance">
+            <span>185</span> <span>GB Left</span>
+          </div>
+        </div>
+    </div>
+  </main> 
+  
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Xulab</a>.
+  </div>
+</body>
+</html>
